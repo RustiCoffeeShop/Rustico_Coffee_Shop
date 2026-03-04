@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustico Coffee Shop</title>
+
+    <!-- FUENTES DE GOOGLE -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <!-- IMAGENES DEL INICIO -->
+    <div id="splash" class="screen active">
+
+  <div class="splash-slides">
+    <div class="splash-slide active" style="background-image: url('INICIO/ICE\ LATTE\ CAJETA\ AFFOGATO.png')"></div>
+    <div class="splash-slide"        style="background-image: url('INICIO/OREO\ AFFOGATO.png')"></div>
+    <div class="splash-slide"        style="background-image: url('INICIO/ICE\ LATTE\ CAJETA\ AFFOGATO.png')"></div>
+  </div>
+
+  <!-- Overlay oscuro para que el texto se lea bien -->
+  <div class="splash-overlay"></div>
+
+  <!-- Contenido encima del fondo -->
+  <div class="splash-content">
+
+    <!-- LOGO -->
+    <img src="Logo/Logo-blanco.png" class="splash-logo" alt="Rustico Coffee">
+
+    <h1 class="splash-title">Rustico<br>Coffee Shop</h1>
+    <p class="splash-tagline">Sabores que te hacen sentir en casa,<br>en cada sorbo.</p>
+
+    <!-- Puntitos indicadores (igual que en la imagen de referencia) -->
+    <div class="splash-dots">
+      <span class="splash-dot active"></span>
+      <span class="splash-dot"></span>
+      <span class="splash-dot"></span>
+    </div>
+
+    <button class="btn-primary" onclick="goHome()">Ver Menú ›</button>
+
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     HOME / MENÚ PRINCIPAL
+═══════════════════════════════════════════════ -->
+<div id="home" class="screen">
+
+  <!-- Encabezado -->
+  <div class="home-header">
+    <p class="home-greeting">Hola, bienvenido 👋</p>
+    <h2 class="home-title">¿Qué te apetece<br><span>hoy?</span></h2>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Buscar bebida o platillo..." oninput="filterItems()" />
+  </div>
+
+  <!-- Carrusel de promociones -->
+  <div class="carousel-wrap" id="carouselSection">
+    <div class="carousel-inner" id="carouselInner">
+
+      <div class="promo-card p1">
+        <div class="promo-bg">
+          <div>
+            <p class="promo-label">Imperdible</p>
+            <h3 class="promo-title">Frappuccinos<br>desde $75</h3>
+            <span class="promo-badge" onclick="filterByCat('frappuccinos')">Ver opciones →</span>
+          </div>
+          <div class="promo-emoji">🥤</div>
+        </div>
+      </div>
+
+      <div class="promo-card p2">
+        <div class="promo-bg">
+          <div>
+            <p class="promo-label">Tendencia</p>
+            <h3 class="promo-title">Boba Tea<br>¡Pruébalo!</h3>
+            <span class="promo-badge" onclick="filterByCat('boba')">Descubrir →</span>
+          </div>
+          <div class="promo-emoji">🧋</div>
+        </div>
+      </div>
+
+      <div class="promo-card p3">
+        <div class="promo-bg">
+          <div>
+            <p class="promo-label">Postres</p>
+            <h3 class="promo-title">Pays y pasteles<br>desde $55</h3>
+            <span class="promo-badge" onclick="filterByCat('postres')">Ver postres →</span>
+          </div>
+          <div class="promo-emoji">🍰</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+
+  <!-- Categorías -->
+  <div class="section-header">
+    <h3 class="section-title">Categorías</h3>
+    <span class="see-all" onclick="filterByCat('all')">Ver todo</span>
+  </div>
+  <div class="cats-scroll" id="catsScroll"></div>
+
+  <!-- Grid de items -->
+  <div class="section-header">
+    <h3 class="section-title" id="itemsTitle">Todo el menú</h3>
+  </div>
+  <div class="items-grid" id="itemsGrid"></div>
+
+  <!-- Barra de navegación inferior -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" id="navHome" onclick="showTab('home')">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">Inicio</span>
+    </button>
+    <button class="nav-btn" id="navContacto" onclick="showTab('contacto')">
+      <span class="nav-icon">📍</span>
+      <span class="nav-label">Contacto</span>
+    </button>
+  </nav>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     PANTALLA DE DETALLE
+═══════════════════════════════════════════════ -->
+<div id="detail" class="screen">
+  <button class="detail-back" onclick="closeDetail()">‹</button>
+  <div id="detailContent"></div>
+</div>
+
+
+<!-- CONTACTO -->
+<div id="contacto" class="screen">
+
+  <div class="contact-header">
+    <h2 class="contact-title">Encuéntranos</h2>
+    <p class="contact-sub">Estamos para servirte</p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon">📍</div>
+    <p class="contact-card-label">Dirección</p>
+    <p class="contact-card-value">Av. Reforma #92 Carlos Pacheco<br>Ensenada, Baja California, México</p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon">📞</div>
+    <p class="contact-card-label">Teléfono</p>
+    <p class="contact-card-value"><a href="tel:+5264611010298">+52 (646) 101 0298</a></p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon">✉️</div>
+    <p class="contact-card-label">Email</p>
+    <p class="contact-card-value"><a href="mailto:cofferustico@gmail.com">Cofferustico@gmail.com</a></p>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon">🕐</div>
+    <p class="contact-card-label">Horario</p>
+    <p class="contact-card-value">
+      Lunes a Sábado: 7:00 AM – 8:00 PM<br>
+      <span style="color:var(--muted)">Domingos: Cerrado</span>
+    </p>
+  </div>
+
+ <div class="social-row">
+  <a class="social-btn facebook" href="https://www.facebook.com/profile.php?id=100087767604154&locale=es_LA" target="_blank">
+    <i class="fa-brands fa-facebook social-icon"></i>
+    <span class="social-name">Facebook</span>
+  </a>
+  <a class="social-btn instagram" href="https://www.instagram.com/rusticoffee_shop/#" target="_blank">
+    <i class="fa-brands fa-instagram social-icon"></i>
+    <span class="social-name">Instagram</span>
+  </a>
+</div>
+
+  <!-- Barra de navegación inferior -->
+  <nav class="bottom-nav">
+    <button class="nav-btn" id="navHome2" onclick="showTab('home')">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">Inicio</span>
+    </button>
+    <button class="nav-btn active" id="navContacto2" onclick="showTab('contacto')">
+      <span class="nav-icon">📍</span>
+      <span class="nav-label">Contacto</span>
+    </button>
+  </nav>
+
+</div>
+
+
+<!-- Script principal -->
+<script src="main.js"></script>
+
+</body>
+</html>
