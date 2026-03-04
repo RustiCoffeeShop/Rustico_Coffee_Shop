@@ -182,7 +182,6 @@ body {
 /* ─── CATEGORÍAS ────────────────────────────── */
 .section-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px 10px; }
 .section-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--cream); }
-.see-all { font-size: 12px; color: var(--accent); cursor: pointer; letter-spacing: .5px; }
 
 .cats-scroll { display: flex; gap: 12px; padding: 0 20px 8px; overflow-x: auto; scrollbar-width: none; }
 .cats-scroll::-webkit-scrollbar { display: none; }
