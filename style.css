@@ -322,6 +322,7 @@ body {
 .social-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px #00000044; }
 .social-btn.facebook { background: #ffffff; color: #1877f2; box-shadow: 0 4px 16px #00000022; }
 .social-btn.instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-btn.whatsapp { background: #179746;}
 .social-btn .social-icon { font-size: 32px; }
 .social-btn .social-name { font-size: 13px; font-weight: 600; }
 
