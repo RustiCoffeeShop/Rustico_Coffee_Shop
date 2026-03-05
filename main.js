@@ -77,7 +77,7 @@ const menuData = [
   { id:'chailatte',         cat:'calientes', name:'Chai Latte',           desc:'Polvo chai con leche vaporizada.',                       priceM:'$75',  priceG:'$85',  emoji:'🫖', gradient:'linear-gradient(135deg,#6a3a10,#b06030)' },
   { id:'choc-blanco',       cat:'calientes', name:'Chocolate Blanco',     desc:'Chocolate blanco con leche caliente.',                   priceM:'$60',  priceG:'$70',  emoji:'🤍', gradient:'linear-gradient(135deg,#5a3a20,#9a7040)' },
   { id:'cookies-cream-hot', cat:'calientes', name:'Cookies & Cream',      desc:'Polvo cookies & cream con leche.',                       priceM:'$65',  priceG:'$75',  emoji:'🍪', gradient:'linear-gradient(135deg,#2a1a1a,#5a3a3a)' },
-  { id:'matcha-hot',        cat:'calientes', name:'Matcha Green Tea',     desc:'Polvo matcha premium con leche.',                        priceM:'$85',  priceG:'$95',  emoji:'🍵', gradient:'linear-gradient(135deg,#1a3a1a,#3a6a3a)' },
+  { id:'matcha-green',      cat:'calientes', name:'Matcha Tea Green',     desc:'Polvo matcha premium con leche.',                        priceM:'$85',  priceG:'$95', img:'./BEBIDAS/BEBIDAS_CALIENTES/MATCHA_TEA_GREEN.png', gradient:'linear-gradient(135deg,#4a2010,#8a4a20)' },
   { id:'red-velvet-hot',    cat:'calientes', name:'Red Velvet',           desc:'Polvo red velvet con leche caliente.',                   priceM:'$75',  priceG:'$85',  emoji:'❤️', gradient:'linear-gradient(135deg,#5a1a1a,#9a3a3a)' },
   { id:'latte-mazapan',     cat:'calientes', name:'Latte de Mazapán',     desc:'Espresso, leche, mazapán y vainilla.',                   priceM:'$75',  priceG:'$85',  emoji:'🍬', gradient:'linear-gradient(135deg,#6a3a10,#aa6a30)' },
 
@@ -125,13 +125,14 @@ const menuData = [
   { id:'frappe-mazapan',     cat:'frappuccinos', name:'Frappuccino Mazapán',     desc:'Polvo vainilla, mazapán, leche, hielo y crema batida.',                        priceM:'$75',  priceG:'$85',  emoji:'🍬', gradient:'linear-gradient(135deg,#5a3a10,#9a6a30)' },
   { id:'frappe-bombon',      cat:'frappuccinos', name:'Frappuccino Bombón',      desc:'Polvo vainilla, leche, bombón, hielo y crema batida.',                         priceM:'$85',  priceG:'$95',  emoji:'🍭', gradient:'linear-gradient(135deg,#5a1a3a,#9a3a6a)' },
 
-  /* ── POSTRES ──────────────────────────────── */
-  { id:'pay-limon',        cat:'postres', name:'Pay de Limón',          desc:'Rebanada de pay de queso con limón.',                              price:'$55', img:'Postres/Limon.png',    emoji:'🍋' },
-  { id:'chocoflan',        cat:'postres', name:'Chocoflan',             desc:'Rebanada de chocoflan, combinación de chocolate y flan.',          price:'$55', img:'Postres/Chocoflan.png', emoji:'🍮' },
-  { id:'pastel-chocolate', cat:'postres', name:'Pastel de Chocolate',   desc:'Rebanada de pastel de chocolate.',                                 price:'$55', img:'Postres/Chocolate.png', emoji:'🎂' },
-  { id:'pay-frambuesa',    cat:'postres', name:'Pay de Queso Frambuesa',desc:'Rebanada de pay de queso con frambuesa.',                          price:'$65', img:'Postres/Queso.png',     emoji:'🍰' },
-  { id:'galletas',         cat:'postres', name:'Galletas',              desc:'Galletas artesanales, precio por pieza.',                          price:'$15', img:'Postres/Galletas.png',  emoji:'🍪' },
-  { id:'pan-dulce',        cat:'postres', name:'Pan Dulce',             desc:'Selección de pan dulce, precio por pieza.',                        price:'$25', img:'Postres/Pan.png',       emoji:'🥐' },
+  /* ── POSTRES/DULCE ──────────────────────────────── */
+  { id:'pay-limon',        cat:'postres', name:'Pay de Limón',          desc:'Rebanada de pay de queso con limón.',                              price:'$55', img:'Postres/Limon.png',    img:'./POSTRES/DULCE/LIMON.png' },
+  { id:'chocoflan',        cat:'postres', name:'Chocoflan',             desc:'Rebanada de chocoflan, combinación de chocolate y flan.',          price:'$55', img:'Postres/Chocoflan.png', img:'./POSTRES/DULCE/CHOCOFLAN.png' },
+  { id:'pastel-chocolate', cat:'postres', name:'Pastel de Chocolate',   desc:'Rebanada de pastel de chocolate.',                                 price:'$55', img:'Postres/Chocolate.png', img:'./POSTRES/DULCE/CHOCOLATE.png' },
+  { id:'pay-frambuesa',    cat:'postres', name:'Pay de Queso Frambuesa',desc:'Rebanada de pay de queso con frambuesa.',                          price:'$65', img:'Postres/Queso.png',     img:'./POSTRES/DULCE/QUESO.png' },
+  { id:'galletas',         cat:'postres', name:'Galletas',              desc:'Galletas artesanales, precio por pieza.',                          price:'$15', img:'Postres/Galletas.png',  img:'./POSTRES/DULCE/GALLETAS.png' },
+  { id:'pan-dulce',        cat:'postres', name:'Pan Dulce',             desc:'Selección de pan dulce, precio por pieza.',                        price:'$25', img:'Postres/Pan.png',       img:'./POSTRES/DULCE/PAN.png' },
+  { id:'pan-frances',      cat:'postres', name:'Pan Frances',           desc:'Pan Frances, incluye nieve.',                                      price:'$25', img:'Postres/Pan.png',       img:'./POSTRES/DULCE/PAN.png' },
 
   /* ── SALADOS ──────────────────────────────── */
   { id:'bagel-jamon',    cat:'salados', name:'Bagel de Jamón',     desc:'Jamón, lechuga, tomate, tocino y mayonesa.',                                             price:'$85',  emoji:'🥯', gradient:'linear-gradient(135deg,#3a2a1a,#7a5a3a)' },
@@ -145,16 +146,12 @@ const menuData = [
 ];
 
 
-/* ═══════════════════════════════════════════════
-   CATEGORÍAS
-   Para reactivar desayunos: descomenta la línea
-   marcada con DESAYUNOS_CAT
-═══════════════════════════════════════════════ */
+/* CATEGORÍAS */
 const categories = [
   { id:'all',          name:'Todo',         emoji:'✨' },
   // { id:'desayunos', name:'Desayunos',    emoji:'🍳' }, // DESAYUNOS_CAT
   { id:'calientes',    name:'Calientes',    emoji:'☕' },
-  { id:'boba',         name:'Boba Tea',     emoji:'🧋' },
+  { id:'boba',         name:'Boba Tea',     emoji:'🍵' },
   { id:'frias',        name:'Frías',        emoji:'🧊' },
   { id:'frappuccinos', name:'Frappuccinos', emoji:'🥤' },
   { id:'postres',      name:'Postres',      emoji:'🍰' },
@@ -162,18 +159,14 @@ const categories = [
 ];
 
 
-/* ═══════════════════════════════════════════════
-   ESTADO DE LA APP
-═══════════════════════════════════════════════ */
+/* ESTADO DE LA APP */
 let currentCat    = 'all';
 let currentItem   = null;
 let carouselIndex = 0;
 let carouselTimer = null;
 
 
-/* ═══════════════════════════════════════════════
-   NAVEGACIÓN ENTRE PANTALLAS
-═══════════════════════════════════════════════ */
+/* NAVEGACIÓN ENTRE PANTALLAS */
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');

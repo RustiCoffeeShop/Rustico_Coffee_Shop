@@ -36,7 +36,7 @@
     <h1 class="splash-title">Rustico<br>Coffee Shop</h1>
     <p class="splash-tagline">Sabores que te hacen sentir en casa,<br>en cada sorbo.</p>
 
-    <!-- Puntitos indicadores (igual que en la imagen de referencia) -->
+    <!-- Puntitos indicadores -->
     <div class="splash-dots">
       <span class="splash-dot active"></span>
       <span class="splash-dot"></span>
@@ -50,15 +50,13 @@
 </div>
 
 
-<!-- ═══════════════════════════════════════════════
-     HOME / MENÚ PRINCIPAL
-═══════════════════════════════════════════════ -->
+<!-- HOME / MENÚ PRINCIPAL -->
 <div id="home" class="screen">
 
   <!-- Encabezado -->
   <div class="home-header">
     <p class="home-greeting">Hola, bienvenido 👋</p>
-    <h2 class="home-title">¿Qué te apetece<br><span>hoy?</span></h2>
+    <h2 class="home-title">¿Qué te apetece <span>hoy?</span></h2>
   </div>
 
   <!-- Barra de búsqueda -->
@@ -67,40 +65,37 @@
     <input type="text" id="searchInput" placeholder="Buscar bebida o platillo..." oninput="filterItems()" />
   </div>
 
-  <!-- Carrusel de promociones -->
+  <!-- CARRUSEL PROMOCIONES -->
   <div class="carousel-wrap" id="carouselSection">
     <div class="carousel-inner" id="carouselInner">
 
       <div class="promo-card p1">
-        <div class="promo-bg">
+        <div class="promo-bg" style="background-image: url('CARRUSEL/FRAPPUCCINOS.png'); background-size: cover; background-position: center;"">
           <div> 
             <p class="promo-label">Imperdible</p>
             <h3 class="promo-title">Frappuccinos<br>desde $75</h3>
             <span class="promo-badge" onclick="filterByCat('frappuccinos')">Ver opciones →</span>
           </div>
-          <div class="promo-emoji">🥤</div>
         </div>
       </div>
 
       <div class="promo-card p2">
-        <div class="promo-bg">
+        <div class="promo-bg" style="background-image: url('CARRUSEL/BOBA.png'); background-size: cover; background-position: center;"">
           <div>
             <p class="promo-label">Tendencia</p>
             <h3 class="promo-title">Boba Tea<br>¡Pruébalo!</h3>
             <span class="promo-badge" onclick="filterByCat('boba')">Descubrir →</span>
           </div>
-          <div class="promo-emoji">🧋</div>
         </div>
       </div>
 
       <div class="promo-card p3">
-        <div class="promo-bg">
+        <div class="promo-bg" style="background-image: url('CARRUSEL/PAY.png'); background-size: cover; background-position: center;"">
           <div>
             <p class="promo-label">Postres</p>
             <h3 class="promo-title">Pays y pasteles<br>desde $55</h3>
             <span class="promo-badge" onclick="filterByCat('postres')">Ver postres →</span>
           </div>
-          <div class="promo-emoji">🍰</div>
         </div>
       </div>
 
