@@ -3,24 +3,6 @@
    Datos del menú, lógica de la app y navegación
 ═══════════════════════════════════════════════ */
 
-
-/* ═══════════════════════════════════════════════
-   DATOS DEL MENÚ
-
-   INSTRUCCIONES DE IMÁGENES:
-   - Reemplaza las rutas de "img" con tus imágenes reales
-   - Ejemplo:  img: 'Bebidas/latte.jpg'
-   - Si un item no tiene foto, déjalo sin la propiedad img
-     y usará el emoji + degradado como fondo automáticamente
-═══════════════════════════════════════════════ */
-
-
-/* ─────────────────────────────────────────────
-   DESAYUNOS — COMENTADOS PARA REACTIVAR
-   Para activar: quita el bloque  /*DESAYUNOS_START … DESAYUNOS_END* /
-   y también descomenta la línea de categoría más abajo
-   ─────────────────────────────────────────────
-
 /*DESAYUNOS_START
 { id:'tazon-fruta',         cat:'desayunos', name:'Tazón de Fruta',            desc:'Fruta de temporada con yogurt y queso cottage.',                                                                      price:'$75',  
 { id:'huevos-rusticos',     cat:'desayunos', name:'Huevos Rústico',             desc:'2 huevos en salsa especial, machaca frita, chilaquiles y frijoles refritos.',                                        price:'$180', img:'Desayunos/Huevos/huevo-rustico.jpg' },
@@ -173,8 +155,9 @@ const menuData = [
   },
 ];
 
-
-/* CATEGORÍAS */
+/* ═══════════════════════════════════════════════
+CATEGORÍAS 
+═══════════════════════════════════════════════ */
 const categories = [
   { id:'all',          name:'Todo',         emoji:'✨' },
   // { id:'desayunos', name:'Desayunos',    emoji:'🍳' }, // DESAYUNOS_CAT
@@ -186,15 +169,17 @@ const categories = [
   { id:'salados',      name:'Salados',      emoji:'🥪' },
 ];
 
-
-/* ESTADO DE LA APP */
+/* ═══════════════════════════════════════════════
+ESTADO DE LA APP 
+═══════════════════════════════════════════════ */
 let currentCat    = 'all';
 let currentItem   = null;
 let carouselIndex = 0;
 let carouselTimer = null;
 
-
-/* NAVEGACIÓN ENTRE PANTALLAS */
+/* ═══════════════════════════════════════════════
+NAVEGACIÓN ENTRE PANTALLAS 
+═══════════════════════════════════════════════ */
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -354,8 +339,8 @@ function renderItems() {
     let mediaHTML;
     if (item.img) {
       mediaHTML = `
-        <img class="item-img" src="${item.img}" alt="${item.name}"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img class="item-img" src="${item.img}" alt="${item.name}" loading="lazy"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="item-img-placeholder" style="display:none;background:${grad}">${item.emoji}</div>`;
     } else {
       mediaHTML = `<div class="item-img-placeholder" style="background:${grad}">${item.emoji}</div>`;
@@ -394,9 +379,9 @@ function openDetail(item) {
 
   let mediaHTML;
   if (item.img) {
-    mediaHTML = `
-      <img class="detail-hero" src="${item.img}" alt="${item.name}"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+   mediaHTML = `
+  <img class="detail-hero" src="${item.img}" alt="${item.name}" loading="lazy"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="detail-hero-placeholder" style="display:none;background:${grad}">${item.emoji}</div>`;
   } else {
     mediaHTML = `<div class="detail-hero-placeholder" style="background:${grad}">${item.emoji}</div>`;
