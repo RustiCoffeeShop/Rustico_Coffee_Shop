@@ -132,7 +132,7 @@ const menuData = [
   { id:'pay-frambuesa',    cat:'postres', name:'Pay de Queso Frambuesa',desc:'Rebanada de pay de queso con frambuesa.',                          price:'$65', img:'./POSTRES/DULCE/4-P.png' },
   { id:'galletas',         cat:'postres', name:'Galletas',              desc:'Galletas artesanales, precio por pieza.',                          price:'$15', img:'./POSTRES/DULCE/5-P.png' },
   { id:'pan-dulce',        cat:'postres', name:'Pan Dulce',             desc:'Selección de pan dulce, precio por pieza.',                        price:'$25', img:'./POSTRES/DULCE/6-P.png' },
-  { id:'pan-frances',      cat:'postres', name:'Pan Frances',           desc:'Pan Frances con nieve, elige tu opción favoita.',                                      price:'$200', img:'./POSTRES/DULCE/7-P.png',
+  { id:'pan-frances',      cat:'postres', name:'Pan Frances',           desc:'Pan Frances con nieve, elige tu opción favorita.',                                      price:'$200', img:'./POSTRES/DULCE/7-P.png',
     opcionesP: [
       { nombre:'Ferrero o Kinder bueno'},
       { nombre:'Tiramisú'},
