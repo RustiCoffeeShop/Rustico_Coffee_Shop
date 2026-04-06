@@ -132,22 +132,45 @@ const menuData = [
   { id:'pay-frambuesa',    cat:'postres', name:'Pay de Queso Frambuesa',desc:'Rebanada de pay de queso con frambuesa.',                          price:'$65', img:'./POSTRES/DULCE/4-P.png' },
   { id:'galletas',         cat:'postres', name:'Galletas',              desc:'Galletas artesanales, precio por pieza.',                          price:'$15', img:'./POSTRES/DULCE/5-P.png' },
   { id:'pan-dulce',        cat:'postres', name:'Pan Dulce',             desc:'Selección de pan dulce, precio por pieza.',                        price:'$25', img:'./POSTRES/DULCE/6-P.png' },
-  { id:'pan-frances',      cat:'postres', name:'Pan Frances',           desc:'Pan Frances, incluye nieve.',                                      price:'$200', img:'./POSTRES/DULCE/7-P.png' },
-  { id:'crepa-dulce',      cat:'postres', name:'Crepas',                desc:'Crepas dulces, incluye nieve.',                                    price:'$150', img:'./POSTRES/DULCE/8-P.png' },
+  { id:'pan-frances',      cat:'postres', name:'Pan Frances',           desc:'Pan Frances con nieve, elige tu opción favoita.',                                      price:'$200', img:'./POSTRES/DULCE/7-P.png',
+    opcionesP: [
+      { nombre:'Ferrero o Kinder bueno'},
+      { nombre:'Tiramisú'},
+      { nombre:'Matcha'},
+      { nombre:'Fresas con crema'},
+      { nombre:'Cinnamon'},
+    ]
+  },
+  { id:'crepa-dulce',      cat:'postres', name:'Crepas',                desc:'Crepas dulces con nieve, elige tu opción favorita.',                                    price:'$150', img:'./POSTRES/DULCE/8-P.png',
+    opcionesD: [
+      { nombre:'Nutella con Plátano'},
+      { nombre:'Ferrero'},
+      { nombre:'Durazno'},
+      { nombre:'Fresas con crema'},
+      { nombre:'Frutos rojos'},
+    ]
+  },
 
   /* ── SALADOS ──────────────────────────────── */
-  { id:'bagel-jamon',    cat:'salados', name:'Bagel de Jamón',     desc:'Jamón, lechuga, tomate, tocino y mayonesa.',                                             price:'$85',  img:'./SALADOS/S-1.png', gradient:'linear-gradient(135deg,#3a2a1a,#7a5a3a)' },
-  { id:'bagel-pollo',    cat:'salados', name:'Bagel de Pollo',     desc:'Pollo, lechuga, tomate, tocino y mayonesa.',                                             price:'$100', img:'./SALADOS/S-2.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
-  { id:'bagel-americano',cat:'salados', name:'Bagel Americano',    desc:'Huevo, jamón, tocino y queso amarillo.',                                                 price:'$85',  img:'./SALADOS/S-3.png', gradient:'linear-gradient(135deg,#5a3a10,#9a6a30)' },
-  { id:'sandwich-jamon', cat:'salados', name:'Sandwich de Jamón',  desc:'Jamón, lechuga, tomate, tocino y mayonesa.',                                             price:'$85',  img:'./SALADOS/S-4.png', gradient:'linear-gradient(135deg,#3a2a1a,#7a5a3a)' },
-  { id:'sandwich-pollo', cat:'salados', name:'Sandwich de Pollo',  desc:'Pollo, lechuga, tomate, tocino y mayonesa.',                                             price:'$95',  img:'./SALADOS/S-5.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
-  { id:'croissant',      cat:'salados', name:'Croissant de Jamón Serrano',  desc:'Jamón Serrano, queso panela, mix de ensalada primavera.',                       price:'$145', img:'./SALADOS/S-9.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
-  { id:'croissant',      cat:'salados', name:'Croissant de Huevo',  desc:'Huevo, jamón, germinado.',                                                              price:'$145', img:'./SALADOS/S-10.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
-  { id:'croissant',      cat:'salados', name:'Croissant de Jamón',  desc:'Jamón, queso mozzarella, mix de ensalada primavera.',                                   price:'$145', img:'./SALADOS/S-11.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
-  { id:'croissant',      cat:'salados', name:'Croissant de Manchego',  desc:'Jamón, queso manchego, tomate, lechuga.',                                            price:'$145', img:'./SALADOS/S-12.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
-  { id:'ensalada-cesar', cat:'salados', name:'Ensalada Pollo',     desc:'Lechuga romana, pollo, chile morrón, tomate cherry, zanahoria, croutons y aderezo.',    price:'$120', img:'./SALADOS/S-6.png', gradient:'linear-gradient(135deg,#1a2a1a,#3a5a3a)' },
-  { id:'ensalada-papa',  cat:'salados', name:'Ensalada de Papa',   desc:'Zanahoria, chícharo, cebollín, mayonesa y pollo.',                                       price:'$80', img:'./SALADOS/S-7.png', gradient:'linear-gradient(135deg,#3a3a1a,#6a6a3a)' },
-  { id:'ensalada-pasta', cat:'salados', name:'Pasta Pesto',        desc:'Tomate cherry, queso panela y pollo.',                                                   price:'$80', img:'./SALADOS/S-8.png', gradient:'linear-gradient(135deg,#2a3a1a,#5a7a3a)' },
+  { id:'bagel-jamon',    cat:'salados', name:'Bagel de Jamón',              desc:'Jamón, lechuga, tomate, tocino y mayonesa.',                                             price:'$85',  img:'./SALADOS/S-1.png', gradient:'linear-gradient(135deg,#3a2a1a,#7a5a3a)' },
+  { id:'bagel-pollo',    cat:'salados', name:'Bagel de Pollo',              desc:'Pollo, lechuga, tomate, tocino y mayonesa.',                                             price:'$100', img:'./SALADOS/S-2.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
+  { id:'bagel-americano',cat:'salados', name:'Bagel Americano',             desc:'Huevo, jamón, tocino y queso amarillo.',                                                 price:'$85',  img:'./SALADOS/S-3.png', gradient:'linear-gradient(135deg,#5a3a10,#9a6a30)' },
+  { id:'sandwich-jamon', cat:'salados', name:'Sandwich de Jamón',           desc:'Jamón, lechuga, tomate, tocino y mayonesa.',                                             price:'$85',  img:'./SALADOS/S-4.png', gradient:'linear-gradient(135deg,#3a2a1a,#7a5a3a)' },
+  { id:'sandwich-pollo', cat:'salados', name:'Sandwich de Pollo',           desc:'Pollo, lechuga, tomate, tocino y mayonesa.',                                             price:'$95',  img:'./SALADOS/S-5.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
+  { id:'croissant',      cat:'salados', name:'Croissant de Jamón Serrano',  desc:'Jamón Serrano, queso panela, mix de ensalada primavera.',                                price:'$145', img:'./SALADOS/S-9.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
+  { id:'croissant',      cat:'salados', name:'Croissant de Huevo',          desc:'Huevo, jamón, germinado.',                                                               price:'$145', img:'./SALADOS/S-10.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
+  { id:'croissant',      cat:'salados', name:'Croissant de Jamón',          desc:'Jamón, queso mozzarella, mix de ensalada primavera.',                                    price:'$145', img:'./SALADOS/S-11.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
+  { id:'croissant',      cat:'salados', name:'Croissant de Manchego',       desc:'Jamón, queso manchego, tomate, lechuga.',                                                price:'$145', img:'./SALADOS/S-12.png', gradient:'linear-gradient(135deg,#4a3a1a,#8a6a3a)' },
+  { id:'ensalada-cesar', cat:'salados', name:'Ensalada Pollo',              desc:'Lechuga romana, pollo, chile morrón, tomate cherry, zanahoria, croutons y aderezo.',     price:'$120', img:'./SALADOS/S-6.png', gradient:'linear-gradient(135deg,#1a2a1a,#3a5a3a)' },
+  { id:'ensalada-papa',  cat:'salados', name:'Ensalada de Papa',            desc:'Zanahoria, chícharo, cebollín, mayonesa y pollo.',                                       price:'$80', img:'./SALADOS/S-7.png', gradient:'linear-gradient(135deg,#3a3a1a,#6a6a3a)' },
+  { id:'ensalada-pasta', cat:'salados', name:'Pasta Pesto',                 desc:'Tomate cherry, queso panela y pollo.',                                                   price:'$80', img:'./SALADOS/S-8.png', gradient:'linear-gradient(135deg,#2a3a1a,#5a7a3a)' },
+  { id:'crepa-salada',   cat:'salados', name:'Crepas Saladas',              desc:'Rellenas al gusto, elige tu opción favorita.',                                           price:'$180', img:'./SALADOS/S-13.png', gradient:'linear-gradient(135deg,#2a3a1a,#5a7a3a)',
+    opciones: [
+      { nombre:'Carnes Frías',    desc:'Relleno de carnes frías, mix de lechuga y espinaca, queso feta y aguacate.' },
+      { nombre:'Pechuga de Pollo',desc:'Relleno de pechuga de pollo, queso y aguacate.' },
+      { nombre:'Vegetariano',     desc:'Relleno de verduras asadas, queso feta, tomates cherry, acompañado de salsa poblana.' },
+    ]
+  },
 ];
 
 
@@ -282,10 +305,34 @@ function renderItems() {
   let items = menuData;
 
   if (currentCat !== 'all') items = items.filter(i => i.cat === currentCat);
-  if (query) items = items.filter(i =>
-    i.name.toLowerCase().includes(query) ||
-    i.desc.toLowerCase().includes(query)
-  );
+  
+  if (query) {
+    const relacionados = {
+      'creas': 'crepa', 'creps': 'crepa', 'crep': 'crepa',
+      'choco': 'chocolate', 'chocoate': 'chocolate', 'chocolat': 'chocolate', 'chocoa': 'chocolate',
+      'frappe': 'frappuccino', 'frape': 'frappuccino', 'frap': 'frappuccino', 'frpp' : 'frappuccino',
+      'bubble': 'boba', 'perla': 'boba',
+      'cafe': 'espresso', 'coffee': 'espresso',
+      'moka': 'mocha', 'moca': 'mocha', 'moc' : 'moka',
+      'vainila': 'vainilla', 'vanilla': 'vainilla',
+      'caramelo': 'caramel', 'carmelo': 'caramel',
+      'nuez': 'avellana', 'nutela': 'nutella',
+      'sandwish': 'sandwich', 'sanwich': 'sandwich', 'sanwi' : 'sandwish',
+      'ensalda': 'ensalada',
+      'baguel': 'bagel',
+      'helado': 'frappuccino',
+      'bobba' : 'boba', 'bobb' : 'boba',
+    };
+
+    const termino = relacionados[query] || query;
+
+    items = items.filter(i =>
+      i.name.toLowerCase().includes(query) ||
+      i.desc.toLowerCase().includes(query) ||
+      i.name.toLowerCase().includes(termino) ||
+      i.desc.toLowerCase().includes(termino)
+    );
+  }
 
   const grid = document.getElementById('itemsGrid');
   grid.innerHTML = '';
@@ -373,6 +420,51 @@ function openDetail(item) {
       </div>`;
   }
 
+  let opcionesPHTML = '';
+  if (item.opcionesP) {
+    opcionesPHTML = `
+      <div class="detail-extras">
+        <p class="detail-extras-title">OPCIONES</p>
+        ${item.opcionesP.map(op => `
+        <div class="detail-extras-body" style="margin-bottom:10px; border-bottom:1px solid #2e1f0f; padding-bottom:10px;">
+          <div>
+            <p style="color:var(--cream); font-weight:600; font-size:13px; margin-bottom:4px;">${op.nombre}</p>
+          </div>
+        </div>`).join('')}
+        <p style="color:var(--muted); font-size:11px; margin-top:8px; text-align:center;">*Incluye nieve*</p>
+      </div>`;
+  }
+
+  let opcionesDHTML = '';
+  if (item.opcionesD) {
+    opcionesDHTML = `
+      <div class="detail-extras">
+        <p class="detail-extras-title">OPCIONES</p>
+        ${item.opcionesD.map(op => `
+        <div class="detail-extras-body" style="margin-bottom:10px; border-bottom:1px solid #2e1f0f; padding-bottom:10px;">
+          <div>
+            <p style="color:var(--cream); font-weight:600; font-size:13px; margin-bottom:4px;">${op.nombre}</p>
+          </div>
+        </div>`).join('')}
+        <p style="color:var(--muted); font-size:11px; margin-top:8px; text-align:center;">*Incluye nieve*</p>
+      </div>`;
+  }
+
+  let opcionesHTML = '';
+  if (item.opciones) {
+    opcionesHTML = `
+      <div class="detail-extras">
+        <p class="detail-extras-title">OPCIONES</p>
+        ${item.opciones.map(op => `
+        <div class="detail-extras-body" style="margin-bottom:10px; border-bottom:1px solid #2e1f0f; padding-bottom:10px;">
+          <div>
+            <p style="color:var(--cream); font-weight:600; font-size:13px; margin-bottom:4px;">${op.nombre}</p>
+            <p class="detail-extras-text">${op.desc}</p>
+          </div>
+        </div>`).join('')}
+      </div>`;
+  }
+
   let extrasHTML = '';
   if (['calientes'].includes(item.cat)) {
     extrasHTML = `
@@ -410,7 +502,7 @@ function openDetail(item) {
           <p class="detail-extras-price">$15 - 20</p>
         </div>
       </div>`;
-  } else if (item.cat === 'salados') {
+  } else if (item.cat === 'salados' && item.id !== 'crepa-salada') {
     extrasHTML = `
       <div class="detail-extras">
         <p class="detail-extras-title">EXTRAS</p>
@@ -485,6 +577,9 @@ document.getElementById('detailContent').innerHTML = `
       <h2 class="detail-name">${item.name}</h2>
       <p class="detail-desc">${item.desc}</p>
       ${sizesHTML}
+      ${opcionesDHTML}
+      ${opcionesPHTML}
+      ${opcionesHTML}
       ${extrasHTML}
       ${esenciasHTML}
       <div class="detail-price-row">
